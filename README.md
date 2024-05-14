@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Study GeniusPro project aims to revolutionize learning by introducing an AI-powered study companion and personalized study materials website, simplifying the studying process for students at every educational level.
+The Study GeniusPro endeavor is geared towards innovating education through the integration of an AI-based study companion and tailored study resources
 
 
 ## Study GenuisPro: What is it?
