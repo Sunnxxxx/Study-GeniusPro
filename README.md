@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Study GeniusPro endeavor is geared towards innovating education through the integration of an AI-based study companion and tailored study resources
+The Study GeniusPro endeavor is geared towards innovating education through the integration of an AI-based study companion and tailored study resources.
 
 
 ## Study GenuisPro: What is it?
