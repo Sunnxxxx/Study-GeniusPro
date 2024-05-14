@@ -16,10 +16,10 @@ Study GeniusPro is a project focused on revolutionizing the learning experience 
 
 Study GeniusPro offers various features to aid students across all education levels. 
 
-1. **User Survey feature:** ask the user about their preferred learning style, learning capabilities, level of understanding in the course, and their prior knowledge in the course.
-2. **Lesson Plnner:** This is a Socratic tutoring feature guiding learners through interactive questioning to foster critical thinking and deeper understanding during lessons.
-3. **Study Material Generator:** generating concise educational notes or quiz questions based on user-provided text, enhancing learning through interactive and customized content.
-4. **Summary & Quiz Generator:** This feature will summarize the PDF file and generate multi question quiz generator
+1. **User Survey feature:** Tailors learning experiences by gathering insights on preferred learning styles, capabilities, course understanding, and prior knowledge.
+2. **Lesson Plnner:** Facilitates Socratic tutoring, engaging learners with interactive questioning to stimulate critical thinking and deeper comprehension.
+3. **Study Material Generator:** Creates succinct educational notes or quizzes from user-provided text, enriching learning with interactive and personalized content
+4. **Summary & Quiz Generator:** Condenses PDF files into summaries and generates multi-question quizzes for comprehensive review.
    
 ## Our Solution
 A cutting-edge application leveraging AI technology to generate interactive study materials and resources, enhancing the efficiency and effectiveness of students' learning experiences.
