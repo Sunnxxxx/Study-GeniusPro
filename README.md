@@ -18,7 +18,7 @@ Study GeniusPro offers various features to aid students across all education lev
 
 1. **User Survey feature:** Tailors learning experiences by gathering insights on preferred learning styles, capabilities, course understanding, and prior knowledge.
 2. **Lesson Plnner:** Facilitates Socratic tutoring, engaging learners with interactive questioning to stimulate critical thinking and deeper comprehension.
-3. **Study Material Generator:** Creates succinct educational notes or quizzes from user-provided text, enriching learning with interactive and personalized content
+3. **Study Material Generator:** Creates succinct educational notes or quizzes from user-provided text, enriching learning with interactive and personalized content.
 4. **Summary & Quiz Generator:** Condenses PDF files into summaries and generates multi-question quizzes for comprehensive review.
    
 ## Our Solution
