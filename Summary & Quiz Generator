@@ -1,0 +1,78 @@
+def summarize():
+    import streamlit as st
+    import fitz  # PyMuPDF
+    import openai
+
+    # Define the OpenAI API key
+    openai.api_key = 'key'
+
+    # Define the function to summarize text
+    def abstract_summary_extraction(text):
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a highly skilled AI trained in language comprehension and summarization. I would like you to read the following text and summarize it into a concise abstract paragraph. Aim to retain the most important points, providing a coherent and readable summary that could help a person understand the main points of the discussion without needing to read the entire text."
+                },
+                {
+                    "role": "user",
+                    "content": text
+                }
+            ]
+        )
+        return response['choices'][0]['message']['content']
+
+    # Define the function to generate quiz questions
+    def generate_quiz_questions(summary):
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a helpful assistant.You are able to generate three quiz questions based on the following text. Please generate three multiple-choice questions with four possible answers, one of which is correct. The question should be based on the most important point in the text. The correct answer to the questions should be bolded on the next line at the bottom of the question. The other three answers should be plausible distractors that could be true but are not directly supported by the text. The question should be clear and concise, and the answers should be plausible enough to make the question challenging. The output format should have each 4 answer options on a separate line, with the correct answer bolded at the end of the question"
+                },
+                {
+                    "role": "user",
+                    "content": summary
+                }
+            ]
+        )
+        return response['choices'][0]['message']['content']
+
+    # Create a Streamlit app
+    st.title('Summary Quiz Generator')
+    st.write('Please import a PDF file for summarization and the generation of quiz questions.')
+    st.sidebar.success("Quickly summarize a document and generate quiz questions based on the content.")
+
+
+    # Allow the user to upload a PDF
+    uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+
+
+    # If a file is uploaded, read and translate it
+    if uploaded_file is not None:
+        # Load the PDF file
+        pdf = fitz.open(stream=uploaded_file.read(), filetype="pdf")
+
+
+        # Read the text from the PDF file
+        text = ""
+        for page in pdf:
+            text += page.get_text()
+
+        # Summarize the text
+        summary = abstract_summary_extraction(text)
+
+        for i in range(len(pdf)):
+            page = pdf.load_page(i)
+            text = page.get_text("text")
+            
+            st.write(f"Summary of Page {i+1}:")
+            summary = abstract_summary_extraction(text)
+            st.write(summary)
+        # Generate quiz questions
+        quiz_questions = generate_quiz_questions(summary)
+
+        # Display the quiz questions
+        st.write(f'Quiz Questions: {quiz_questions}')
